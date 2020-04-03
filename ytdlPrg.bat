@@ -41,3 +41,11 @@ youtube-dl -o "Downloads/%%(title)s.%%(ext)s" -f "bestaudio[ext=m4a]" --add-meta
 ECHO ----------------------------------------------------------------------------------------------------------------------
 PAUSE
 EXIT
+
+:videodownloadtxt
+ECHO.
+SET /P VIDRES="[Enter resolution(360,720, etc) ] "
+youtube-dl -a list.txt -o "Downloads/%%(title)s.%%(ext)s" -f "bestvideo[height<=%VIDRES%][ext=mp4]+bestaudio[ext=m4a]/best[height<=%VIDRES%][ext=mp4]" %URL%
+ECHO ----------------------------------------------------------------------------------------------------------------------
+PAUSE
+EXIT
