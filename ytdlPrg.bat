@@ -15,3 +15,21 @@ if %option% == 4 (goto audiodownloadtxt)
 if %option% == 5 (goto update)
 ECHO Unknown value 
 goto selection
+
+:videodownload
+ECHO.
+SET /P URL="[Enter URL] "
+SET /P VIDRES="[Enter resolution(360,720, etc) ] "
+youtube-dl -o "Downloads/%%(title)s.%%(ext)s" -f "bestvideo[height<=%VIDRES%][ext=mp4]+bestaudio[ext=m4a]/best[height<=%VIDRES%][ext=mp4]" %URL%
+ECHO ----------------------------------------------------------------------------------------------------------------------
+PAUSE
+EXIT
+
+:videodownload
+ECHO.
+SET /P URL="[Enter URL] "
+SET /P VIDRES="[Enter resolution(360,720, etc) ] "
+youtube-dl -o "Downloads/%%(title)s.%%(ext)s" -f "bestvideo[height<=%VIDRES%][ext=mp4]+bestaudio[ext=m4a]/best[height<=%VIDRES%][ext=mp4]" %URL%
+ECHO ----------------------------------------------------------------------------------------------------------------------
+PAUSE
+EXIT
