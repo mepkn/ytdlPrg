@@ -33,3 +33,11 @@ youtube-dl -o "Downloads/%%(title)s.%%(ext)s" -f "bestvideo[height<=%VIDRES%][ex
 ECHO ----------------------------------------------------------------------------------------------------------------------
 PAUSE
 EXIT
+
+:audiodownload
+ECHO.
+SET /P URL="[Enter URL] "
+youtube-dl -o "Downloads/%%(title)s.%%(ext)s" -f "bestaudio[ext=m4a]" --add-metadata %URL%
+ECHO ----------------------------------------------------------------------------------------------------------------------
+PAUSE
+EXIT
