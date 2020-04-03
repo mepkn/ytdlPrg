@@ -49,3 +49,10 @@ youtube-dl -a list.txt -o "Downloads/%%(title)s.%%(ext)s" -f "bestvideo[height<=
 ECHO ----------------------------------------------------------------------------------------------------------------------
 PAUSE
 EXIT
+
+:audiodownloadtxt
+ECHO.
+youtube-dl -a list.txt -o "Downloads/%%(title)s.%%(ext)s" -f "bestaudio[ext=m4a]" --add-metadata %URL%
+ECHO ----------------------------------------------------------------------------------------------------------------------
+PAUSE
+EXIT
